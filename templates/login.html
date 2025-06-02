@@ -1,0 +1,36 @@
+<!-- student/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css//style.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico.png') }}">
+    </head>
+    <body class="login-body">
+        <div class="login-box">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo">
+            </div>
+            <h2>Student Login</h2>
+            <form onsubmit="return studentLogin(event)">
+                <label>Batch</label>
+                <input type="text" id="batch" required />
+
+                <label>Degree</label>
+                <input type="text" id="degree" required />
+
+                <label>Roll Number</label>
+                <input type="text" id="rollno" required />
+
+                <!-- <label>Password</label>
+                <input type="password" id="password" required /> -->
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+         <script src="{{ url_for('static', filename='js/main.js') }}"></script>  <!-- for index.html -->
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>  <!-- for dashboard.html -->
+    </body>
+</html>
