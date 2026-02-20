@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Dashboard</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css//dashboard.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico.png') }}">
+    </head>
+    <body class="dashboard-background">
+
+        <div class="dashboard-header">
+            <div class="header-left">
+                <img src="{{ url_for('static', filename='assets//logo.png') }}" alt="Logo">
+                <h1>Welcome Student</h1>
+            </div>
+            <button onclick="window.location.href='login.html'"
+                class="logout-btn">Logout</button>
+        </div>
+
+        <div class="dashboard-container">
+            <div class="flip-card">
+                <div class="flip-card-inner" id="card">
+                    <!-- Front of Card -->
+                    <div class="flip-card-front">
+                        <h2>Student Dashboard</h2>
+                        <ul class="card-list">
+                            <li
+                                onclick="flipCard('Attendance', 'You have attended 18 out of 20 classes.')">📅
+                                Attendance</li>
+                            <li
+                                onclick="flipCard('Fees', 'Total paid: Rs. 50,000. No dues remaining.')">💰
+                                Fees</li>
+                            <li
+                                onclick="flipCard('Grades', 'Grades: A+ — Excellent performance!')">🎓
+                                Grades</li>
+                            <li
+                                onclick="flipCard('Courses', 'Enrolled in 5 courses this semester.')">📚
+                                Courses</li>
+                            <li
+                                onclick="flipCard('Attendance Percentage', 'Your attendance is 90%.')">🧮
+                                Attendance %</li>
+                            <li
+                                onclick="flipCard('Profile', 'Name: Ali Raza\nRoll No: 12345\nDept: ICS')">📋
+                                Profile</li>
+                            <li
+                                onclick="flipCard('Result Card', 'Overall Result: A+ (Excellent)')">📄
+                                Result Card</li>
+                        </ul>
+                    </div>
+
+                    <!-- Back of Card -->
+                    <div class="flip-card-back">
+                        <h2 id="back-title">Section</h2>
+                        <p id="back-content">Details go here.</p>
+                        <button onclick="flipBack()"
+                            class="logout-btn">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <script src="{{ url_for('static', filename='js/main.js') }}"></script>  <!-- for index.html -->
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>  <!-- for dashboard.html -->
+
+    </body>
+</html>
